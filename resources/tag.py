@@ -59,7 +59,7 @@ class LinkTagsToItem(MethodView):
         item.tags.remove(tag)
 
         try:
-            db.session.add(item)
+            db.session.delete(item)
             db.session.commit()
         except SQLAlchemyError:
             abort(500, message="An error occurred while deleting the tag.")
