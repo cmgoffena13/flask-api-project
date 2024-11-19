@@ -70,7 +70,7 @@ def create_app(db_url=None):
     @jwt.invalid_token_loader
     def invalid_token_callback(error):
         return (jsonify(
-            {"message": "Signature verification failed.", "error": "invalid_toke"}, 401
+            {"message": "Signature verification failed.", "error": "invalid_token"}, 401
         ))
 
     @jwt.unauthorized_loader
